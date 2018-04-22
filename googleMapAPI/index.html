@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Google Map</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <style media="screen">
+        #map{
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>my google map</h1>
+    <div id="map">
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        function initMap(){
+            var options = {
+                zoom:10,
+                center:{lat:13.756331,lng:100.501765},
+                styles:
+                [
+    {
+        "featureType": "all",
+        "elementType": "all",
+        "stylers": [
+            {
+                "lightness": "42"
+            },
+            {
+                "visibility": "on"
+            },
+            {
+                "hue": "#ff0000"
+            },
+            {
+                "saturation": "-100"
+            },
+            {
+                "gamma": "0.78"
+            },
+            {
+                "weight": "0.37"
+            },
+            {
+                "invert_lightness": true
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#444444"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#3ec7c9"
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    }
+]
+
+            }
+
+            var map = new google.maps.Map(document.getElementById('map'),options);
+            var marker = new google.maps.Marker({
+                position: {lat:13.743903,lng:100.630412},
+                map:map,
+                icon: 'cat-breakthru.png'
+            });
+            var infoWindow = new google.maps.InfoWindow({
+                content: '<h5>My Home with My Kitty Anna</h5>'
+            });
+
+            marker.addListener('click',function(){
+                infoWindow.open(map,marker);
+            });
+        }
+    </script>
+  <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDwJPfaTSfeOXXLyCquqtPZgywKKz69BA&callback=initMap">
+
+  </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>

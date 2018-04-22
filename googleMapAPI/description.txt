@@ -1,0 +1,5 @@
+APi for beginners:
+biggest API directory:  programmableweb.com
+https://snazzymaps.com/  this website has cool map designs.
+https://www.twilio.com/  is a website that automates sending messages to people by sms using API
+with google map api we can insert maps, get directions and go all map functionality Uber uses for connecting drivers to passengers.
